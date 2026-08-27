@@ -2,6 +2,12 @@ import tkinter as tk
 
 
 def createDice(parent, sides):
+    
+    """Creates the visual dice
+
+    Returns:
+        tk.Frame: The frame containing all data related to that dice
+    """    
 
     diceFrame = tk.Frame(parent, width=100, height=100, bg="black")
 

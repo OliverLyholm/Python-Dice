@@ -4,6 +4,16 @@ from tkinter import simpledialog
 
 
 def createMenu(window, diceSides, diceAmount, addDice, clearDice, rollAllDice):
+    """Creates the menu to add, clear and roll dice
+
+    Args:
+        window (tk.tk): Tkiter Window
+        diceSides (tk.VARint): Sides of the dice
+        diceAmount (tk.VARint): Amount of die
+        addDice (function): Add Dice Function
+        clearDice (function): Clear Dice Function
+        rollAllDice (function): Roll All Dice Function
+    """    
     menu = tk.Menu(window)
 
     diceMenu = tk.Menu(menu, tearoff=0)
@@ -11,6 +21,8 @@ def createMenu(window, diceSides, diceAmount, addDice, clearDice, rollAllDice):
     sidesMenu = tk.Menu(diceMenu, tearoff=0)
 
     def setDiceAmount():
+        """ lets the user set the amount of dice they want added
+        """        
         amount = simpledialog.askinteger(
             "Dice amount", "How many dice do you want?", parent=window, minvalue=1
         )

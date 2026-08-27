@@ -2,7 +2,7 @@ import tkinter as tk
 
 def createDice(parent, sides):
     
-    diceFrame = tk.Frame(parent)
+    diceFrame = tk.Frame(parent, width=100, height=100, bg="black")
     
     dice = tk.Label(
         diceFrame,
@@ -10,22 +10,25 @@ def createDice(parent, sides):
         bg="black",
         fg="white",
         font=("Arial", 40),
-        width=3,
-        height=1
+
     )
+    
+    diceFrame.pack_propagate(False)
     
     diceSides = tk.Label(
         diceFrame,
-        text=(f"D{sides}")
+        text=(f"D{sides}"),
+        bg="black",
+        fg="white"
     )
     
     diceSides.pack()
-    dice.pack()
+    dice.pack(expand=True)
     
-    diceFrame.pack(side="left", padx=5, pady=5)
+    
     
     dice.sides = sides
     diceFrame.sides = sides
     diceFrame.dice = dice
     
-    return dice
+    return diceFrame

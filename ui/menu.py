@@ -73,6 +73,11 @@ def createMenu(window, diceSides, diceAmount, addDice):
         menu=diceMenu
     )
     
+    menu.add_command(
+            label="Clear Dice",
+
+        )
+    
     window.config(menu=menu)
     
 

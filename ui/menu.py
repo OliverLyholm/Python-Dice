@@ -3,7 +3,7 @@ import tkinter as tk
 from tkinter import simpledialog
 
 
-def createMenu(window, diceSides, diceAmount, addDice):
+def createMenu(window, diceSides, diceAmount, addDice, clearDice, rollAllDice):
     menu = tk.Menu(window)
     
     diceMenu = tk.Menu(menu, tearoff=0)
@@ -74,8 +74,13 @@ def createMenu(window, diceSides, diceAmount, addDice):
     )
     
     menu.add_command(
+        label="Roll",
+        command=rollAllDice
+    )
+    
+    menu.add_command(
             label="Clear Dice",
-
+            command=clearDice
         )
     
     window.config(menu=menu)

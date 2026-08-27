@@ -17,6 +17,8 @@ def createWindow():
     diceAmount = tk.IntVar(value=1)
     diceCount = 0
     
+    
+    
     def addDice():
         
         nonlocal diceCount
@@ -36,19 +38,27 @@ def createWindow():
             dice = diceFrame.dice
             result = rollDice(dice.sides)
             dice.config(text=result)
+            
+            
+    def clearDice():
+        nonlocal diceCount
+        
+        for diceFrame in diceMainFrame.winfo_children():
+            diceFrame.destroy()
+            
+            
+        diceCount = 0
 
     
 
-    
-    
     
     diceMainFrame = tk.Frame(window)
     diceMainFrame.pack()
     
-    createMenu(window, diceSides, diceAmount, addDice)
+    addDice()
     
-    rollButton = tk.Button(window, text="Roll", command=rollAllDice)
-    rollButton.pack()
+    createMenu(window, diceSides, diceAmount, addDice, clearDice, rollAllDice)
+    
     
     return window
 
